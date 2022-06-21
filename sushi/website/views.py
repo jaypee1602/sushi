@@ -17,5 +17,5 @@ def menu(request):
     return render(request, 'menu.html', {})
 
 
-def order(request):
-    return render(request, 'order.html', {})
+def cart(request):
+    return render(request, 'cart.html', {})

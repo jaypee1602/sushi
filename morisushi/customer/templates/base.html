@@ -47,7 +47,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						{% url 'about' as url %}
+						{% url 'index' as url %}
 						<li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href="{{ url }}" >Home</a></li>
 						{% url 'menu' as url %}
 						<li class="nav-item {% if request.path == url %}active{% endif %}"><a class="nav-link" href="{{ url }}">Menu</a></li>

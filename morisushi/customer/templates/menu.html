@@ -18,11 +18,11 @@
 
 	<!-- Start Menu -->
 	<div class="menu-box">
-		<div class="container">
+			<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Special Menu</h2>
+	b				<div class="heading-title text-center">
+						<h2>Order here</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
@@ -32,27 +32,42 @@
 					<div class="special-menu text-center">
 						<div class="button-group filter-button-group">
 							<button class="active" data-filter="*">All</button>
-							<button data-filter=".drinks">Drinks</button>
-							<button data-filter=".lunch">Lunch</button>
-							<button data-filter=".dinner">Dinner</button>
+							<button data-filter=".uramaki">Uramaki</button>
+							<button data-filter=".nigiri">Nigiri</button>
+							<button data-filter=".dinner">Temaki</button>
 						</div>
 					</div>
 				</div>
 			</div>
 
 			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				{% for maki in uramaki %}
+				<div class="col-lg-4 col-md-6 special-grid uramaki">
 					<div class="gallery-single fix">
-						<img src=" {% static 'images/img-01.jpg' %} " class="img-fluid" alt="Image">
+						<img src="{{ maki.image.url }}" class="img-fluid" alt="Image">
 						<div class="why-text">
-							<h4>Special Drinks 1</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
-							<h5> $7.79</h5>
+							<h4>{{ maki.name }}</h4>
+							<p>{{ maki.description }}</p>
+							<h5>{{ maki.price }}</h5>
 						</div>
 					</div>
 				</div>
+				{% endfor %}
 
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				{% for n in nigiri %}
+				<div class="col-lg-4 col-md-6 special-grid nigiri">
+					<div class="gallery-single fix">
+						<img src="{{ n.image.url }}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>{{ n.name }}</h4>
+							<p>{{ n.description }}</p>
+							<h5>{{ n.price }}</h5>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+				<div class="col-lg-4 col-md-6 special-grid uramaki">
 					<div class="gallery-single fix">
 						<img src=" {% static 'images/img-02.jpg' %} " class="img-fluid" alt="Image">
 						<div class="why-text">
@@ -63,7 +78,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-4 col-md-6 special-grid uramaki">
 					<div class="gallery-single fix">
 						<img src=" {% static 'images/img-03.jpg' %} " class="img-fluid" alt="Image">
 						<div class="why-text">
@@ -74,7 +89,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 special-grid lunch">
+				<div class="col-lg-4 col-md-6 special-grid nigiri">
 					<div class="gallery-single fix">
 						<img src=" {% static 'images/img-04.jpg' %} " class="img-fluid" alt="Image">
 						<div class="why-text">
@@ -85,7 +100,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 special-grid lunch">
+				<div class="col-lg-4 col-md-6 special-grid nigiri">
 					<div class="gallery-single fix">
 						<img src=" {% static 'images/img-05.jpg' %} " class="img-fluid" alt="Image">
 						<div class="why-text">
@@ -96,7 +111,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-4 col-md-6 special-grid lunch">
+				<div class="col-lg-4 col-md-6 special-grid nigiri">
 					<div class="gallery-single fix">
 						<img src=" {% static 'images/img-06.jpg' %} " class="img-fluid" alt="Image">
 						<div class="why-text">
